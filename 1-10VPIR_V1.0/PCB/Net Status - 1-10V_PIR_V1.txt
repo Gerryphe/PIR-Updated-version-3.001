@@ -1,0 +1,66 @@
+Net Status Report
+Filename     : C:\Users\gphel\OneDrive\PCB Development and Firmware 2023\Mo Ayat\Mo Ayat Share\1-10VPIR_V1.0\PCB\1-10V_PIR_V1.0.PcbDoc
+Date         : 08/02/2024
+Time         : 19:33:26
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    +12V, Signal Layers Only, 1382.702mils
+    +24V, Signal Layers Only, 2313.074mils
+    +24V_IN, Signal Layers Only, 317.928mils
+    +3.3VD, Signal Layers Only, 5126.056mils
+    +5V_USB, Signal Layers Only, 2095.724mils
+    1-10V, Signal Layers Only, 1473.555mils
+    ADJ, Signal Layers Only, 206.675mils
+    BOOT, Signal Layers Only, 1180.318mils
+    BST, Signal Layers Only, 110.908mils
+    DTR, Signal Layers Only, 438.873mils
+    EN, Signal Layers Only, 2172.997mils
+    EN1, Signal Layers Only, 66.133mils
+    FB, Signal Layers Only, 173.452mils
+    GND, Signal Layers Only, 3821.035mils
+    IN, Signal Layers Only, 200.024mils
+    IO16, Signal Layers Only, 160.64mils
+    IO17, Signal Layers Only, 162.902mils
+    IO18, Signal Layers Only, 160.64mils
+    IO19, Signal Layers Only, 160.64mils
+    IO2, Signal Layers Only, 195.461mils
+    IO21, Signal Layers Only, 160.64mils
+    IO22, Signal Layers Only, 164.465mils
+    IO23, Signal Layers Only, 160.64mils
+    IO4, Signal Layers Only, 160.64mils
+    IO5, Signal Layers Only, 162.902mils
+    NIN, Signal Layers Only, 265.276mils
+    NetC17_1, Signal Layers Only, 1472.9mils
+    NetFB1_2, Signal Layers Only, 404.233mils
+    NetJ1_4, Signal Layers Only, 170.749mils
+    NetJ1_5, Signal Layers Only, 160.261mils
+    NetJ3_1, Signal Layers Only, 185.461mils
+    NetJ3_8, Signal Layers Only, 200.622mils
+    NetJ4_1, Signal Layers Only, 514.851mils
+    NetLD1_2, Signal Layers Only, 336.542mils
+    NetLD2_2, Signal Layers Only, 355.717mils
+    NetQ1_1, Signal Layers Only, 50.028mils
+    NetQ2_1, Signal Layers Only, 51.163mils
+    NetU3_6, Signal Layers Only, 58.508mils
+    PIR, Signal Layers Only, 990.847mils
+    PWM, Signal Layers Only, 490.558mils
+    RC, Signal Layers Only, 135.572mils
+    RTS, Signal Layers Only, 318.505mils
+    R\S\T\, Signal Layers Only, 71.011mils
+    ST_LED, Signal Layers Only, 1575.828mils
+    SW, Signal Layers Only, 0mils
+    SW1.1, Signal Layers Only, 436.616mils
+    SW1.2, Signal Layers Only, 403.913mils
+    SW1.3, Signal Layers Only, 360.135mils
+    SW1.4, Signal Layers Only, 346.27mils
+    SW2.1, Signal Layers Only, 372.201mils
+    SW2.2, Signal Layers Only, 396.507mils
+    SW2.3, Signal Layers Only, 462.776mils
+    SW2.4, Signal Layers Only, 504.757mils
+    USB_N, Signal Layers Only, 1203.057mils
+    USB_P, Signal Layers Only, 962.735mils
+    USB_RxD, Signal Layers Only, 1426.747mils
+    USB_TxD, Signal Layers Only, 1346.827mils
+    VBUS, Signal Layers Only, 253.249mils
+count : 58
