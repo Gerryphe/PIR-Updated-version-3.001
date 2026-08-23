@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Data</title>
+    <link rel="icon" type="image/png" href="icon.png" />
+    <!--build:css styleMin.css  -->
+    <link href="src\css\style.css" rel="stylesheet" />
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--Loader-->
+    <div id="overlay" class="overlay" style="display: none;">
+      <div id="processing" class="loader"></div>
+    </div>
+    <!--Sidebar-->
+    <div class="c-sidebar c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+      <div class="c-sidebar-brand d-lg-down-none">
+        <div class="c-sidebar-brand-full" alt="Enel Logo">
+          <a href="index.html"><span class="bg-img bg-img-logo-sidebar-full"></span></a>
+        </div>
+        <div class="c-sidebar-brand-minimized" alt="Enel Logo">
+          <a href="index.html"><span class="bg-img bg-img-logo-sidebar-min"></span></a>
+        </div>
+      </div>
+      <ul class="c-sidebar-nav ps ps--active-y">
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown c-show">
+          <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
+            <div class="c-sidebar-nav-icon icon-center">
+              <span class="bg-img bg-img-monitoring"></span>
+            </div>
+            Monitoring
+          </a>
+          <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link c-active" href="#">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-data"></span>
+                </div>
+                Data
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+          <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
+            <div class="c-sidebar-nav-icon icon-center">
+              <span class="bg-img bg-img-setup"></span>
+            </div>
+            Setup
+          </a>
+          <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="system.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-system"></span>
+                </div>
+                System
+              </a>
+            </li>
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="wifi.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-wifi"></span>
+                </div>
+                Wi-Fi
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+          <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
+            <div class="c-sidebar-nav-icon icon-center">
+              <span class="bg-img bg-img-services"></span>
+            </div>
+            Services
+          </a>
+          <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="ntp.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-ntp"></span>
+                </div>
+                NTP
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+          <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
+            <div class="c-sidebar-nav-icon icon-center">
+              <span class="bg-img bg-img-admin"></span>
+            </div>
+            Administration
+          </a>
+          <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="users.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-user2"></span>
+                </div>
+                Users
+              </a>
+            </li>
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="backup.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-backup"></span>
+                </div>
+                Backup
+              </a>
+            </li>
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="fwUpdate.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-update"></span>
+                </div>
+                FW Update
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li id="userBlockMenu" style="display: none;">
+          <a class="c-sidebar-nav-link" href="#" onclick="common.sessionLogout();">
+            <div class="c-sidebar-nav-icon icon-center">
+              <span class="bg-img bg-img-logout"></span>
+            </div>
+            Logout
+          </a>
+        </li>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
+        <div class="ps__rail-y" style="top: 0px; height: 519px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 340px;"></div></div>
+      </ul>
+      <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
+    </div>
+    <div class="c-wrapper c-fixed-components">
+      <!--Header-->
+      <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+        <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">
+          <div class="menu-icon">
+            <span></span>
+          </div>
+        </button>
+        <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true">
+          <div class="menu-icon">
+            <span></span>
+          </div>
+        </button>
+        <a class="c-header-brand c-header-brand-center d-logo-none" href="index.html">
+          <div alt="Enel Logo">
+            <span class="bg-img bg-img-logo-header-full"></span>
+          </div>
+        </a>
+        <ul class="c-header-nav ml-auto mr-4">
+          <li class="c-header-nav-item dropdown" id="userBlockHeader" style="display: none;">
+            <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <div class="c-avatar">
+                <span class="bg-img bg-img-user"></span>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right pt-0">
+              <div class="dropdown-header bg-light py-2">
+                <strong>Account</strong>
+              </div>
+              <div class="dropdown-item-info">
+                <span><label class="label1">User name:</label></span>
+                <span id="userName">USER1</span>
+              </div>
+              <div class="dropdown-item-info">
+                <span><label class="label1">User role:&nbsp;&nbsp;&nbsp;</label></span>
+                <span id="userRole">Superadmin</span>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" onclick="common.sessionLogout();">
+                <div class="c-icon mr-2 icon-center">
+                  <span class="bg-img bg-img-logout2"></span>
+                </div>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+        <div class="c-subheader px-3">
+          <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item active">Monitoring / Data</li>
+          </ol>
+        </div>
+      </header>
+      <div class="c-body">
+        <!--Main content-->
+        <main class="c-main">
+          <div class="container-fluid">
+            <div class="fade-in">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-status bg-status-ok" id="statusDiv" style="display: none;">
+                    <span class="status-img bg-img bg-img-status-ok" id="imgStatusOk" style="display: none;"></span>
+                    <span class="status-img bg-img bg-img-status-bad" id="imgStatusErr" style="display: none;"></span>
+                    <span class="status-img bg-img bg-img-status-warn" id="imgStatusWarn" style="display: none;"></span>
+                    <strong id="statusTextDiv" class="status-text"></strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="fade-in">
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <strong>Power channels</strong>
+                    </div>
+                    <div class="card-body">
+                      <div class="form-horizontal">
+
+                        <div class="justify-content-centr">
+                          <table class="table table-responsive-sm">
+                            <tbody>
+                              <tr>
+                                <th class="text-center"></th>
+                                <th scope="col" class="text-center">
+                                  Voltage(V)
+                                </th>
+                                <th scope="col" class="text-center">
+                                  Current(A)
+                                </th>
+                                <th scope="col" class="text-center">
+                                  Active power(W)
+                                </th>
+                                <th scope="col" class="text-center">
+                                  Reactive power(VAR)
+                                </th>
+                                <th scope="col" class="text-center">
+                                  Apparent power(VA)
+                                </th>
+                                <th scope="col" class="text-center">
+                                  Power Factor
+                                </th>
+                                <th scope="col" class="text-center">
+                                  Ipeak(A)
+                                </th>
+                                <th scope="col" class="text-center">
+                                  Vpeak(V)
+                                </th>
+                                <th scope="col" class="text-center">
+                                  Freq(Hz)
+                                </th>
+                                <th scope="col" class="text-center">
+                                  Pcons(kWh)
+                                </th>
+                              </tr>
+                              <tr id="ch1Region" style="display: none;">
+                                <th scope="row" class="text-center">
+                                  CH1 -
+                                  <span id="ch1Descr">PH1</span>
+                                </th>
+                                <td class="text-center" id="v1">
+                                </td>
+                                <td class="text-center" id="i1">
+                                </td>
+                                <td class="text-center" id="p1">
+                                </td>
+                                <td class="text-center" id="q1">
+                                </td>
+                                <td class="text-center" id="s1">
+                                </td>
+                                <td class="text-center" id="pf1">
+                                </td>
+                                <td class="text-center" id="ip1">
+                                </td>
+                                <td class="text-center" id="vp1">
+                                </td>
+                                <td class="text-center" id="f1">
+                                </td>
+                                <td class="text-center" id="pcons1">
+                                </td>
+                              </tr>
+                              <tr id="ch2Region" style="display: none;">
+                                <th scope="row" class="text-center">
+                                  CH2 -
+                                  <span id="ch2Descr">PH2</span>
+                                </th>
+                                <td class="text-center" id="v2">
+                                </td>
+                                <td class="text-center" id="i2">
+                                </td>
+                                <td class="text-center" id="p2">
+                                </td>
+                                <td class="text-center" id="q2">
+                                </td>
+                                <td class="text-center" id="s2">
+                                </td>
+                                <td class="text-center" id="pf2">
+                                </td>
+                                <td class="text-center" id="ip2">
+                                </td>
+                                <td class="text-center" id="vp2">
+                                </td>
+                                <td class="text-center" id="f2">
+                                </td>
+                                <td class="text-center" id="pcons2">
+                                </td>
+                              </tr>
+                              <tr id="ch3Region" style="display: none;">
+                                <th scope="row" class="text-center">
+                                  CH3 -
+                                  <span id="ch3Descr">PH3</span>
+                                </th>
+                                <td class="text-center" id="v3">
+                                </td>
+                                <td class="text-center" id="i3">
+                                </td>
+                                <td class="text-center" id="p3">
+                                </td>
+                                <td class="text-center" id="q3">
+                                </td>
+                                <td class="text-center" id="s3">
+                                </td>
+                                <td class="text-center" id="pf3">
+                                </td>
+                                <td class="text-center" id="ip3">
+                                </td>
+                                <td class="text-center" id="vp3">
+                                </td>
+                                <td class="text-center" id="f3">
+                                </td>
+                                <td class="text-center" id="pcons3">
+                                </td>
+                              </tr>
+                              <tr id="ch4Region" style="display: none;">
+                                <th scope="row" class="text-center">
+                                  CH4 -
+                                  <span id="ch4Descr">Neutral line</span>
+                                </th>
+                                <td class="text-center">
+                                </td>
+                                <td class="text-center" id="i4">
+                                </td>
+                                <td class="text-center">
+                                </td>
+                                <td class="text-center">
+                                </td>
+                                <td class="text-center">
+                                </td>
+                                <td class="text-center">
+                                </td>
+                                <td class="text-center" id="ip4">
+                                </td>
+                                <td class="text-center">
+                                </td>
+                                <td class="text-center">
+                                </td>
+                                <td class="text-center">
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-6"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!--Footer-->
+        <footer class="c-footer">V<span id="fwVer"></span></footer>
+      </div>
+    </div>
+    <!--build:js commonMin.js  -->
+    <script src="src\js\responsive.js"></script>
+    <script src="src\js\common.js"></script>
+    <script src="src\js\commands.js"></script>
+    <!-- endbuild -->
+    <!--build:js monitoringDataMin.js  -->
+    <script src="src\js\monitoringData.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

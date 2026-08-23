@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>NTP</title>
+    <link rel="icon" type="image/png" href="icon.png" />
+    <!--build:css styleMin.css  -->
+    <link href="src\css\style.css" rel="stylesheet" />
+    <!--Basic styles-->
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--Loader-->
+    <div id="overlay" class="overlay" style="display: none;">
+      <div id="processing" class="loader"></div>
+    </div>
+    <!--Sidebar-->
+    <div class="c-sidebar c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+      <div class="c-sidebar-brand d-lg-down-none">
+        <div class="c-sidebar-brand-full" alt="Enel Logo">
+          <a href="index.html"><span class="bg-img bg-img-logo-sidebar-full"></span></a>
+        </div>
+        <div class="c-sidebar-brand-minimized" alt="Enel Logo">
+          <a href="index.html"><span class="bg-img bg-img-logo-sidebar-min"></span></a>
+        </div>
+      </div>
+      <ul class="c-sidebar-nav ps ps--active-y">
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+          <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
+            <div class="c-sidebar-nav-icon icon-center">
+              <span class="bg-img bg-img-monitoring"></span>
+            </div>
+            Monitoring
+          </a>
+          <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="index.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-data"></span>
+                </div>
+                Data
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+          <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
+            <div class="c-sidebar-nav-icon icon-center">
+              <span class="bg-img bg-img-setup"></span>
+            </div>
+            Setup
+          </a>
+          <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="system.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-system"></span>
+                </div>
+                System
+              </a>
+            </li>
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="wifi.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-wifi"></span>
+                </div>
+                Wi-Fi
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown c-show">
+          <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
+            <div class="c-sidebar-nav-icon icon-center">
+              <span class="bg-img bg-img-services"></span>
+            </div>
+            Services
+          </a>
+          <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link c-active" href="#">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-ntp"></span>
+                </div>
+                NTP
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+          <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
+            <div class="c-sidebar-nav-icon icon-center">
+              <span class="bg-img bg-img-admin"></span>
+            </div>
+            Administration
+          </a>
+          <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="users.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-user2"></span>
+                </div>
+                Users
+              </a>
+            </li>
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="backup.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-backup"></span>
+                </div>
+                Backup
+              </a>
+            </li>
+            <li class="c-sidebar-nav-item">
+              <a class="c-sidebar-nav-link" href="fwUpdate.html">
+                <div class="c-sidebar-nav-icon icon-center">
+                  <span class="bg-img bg-img-update"></span>
+                </div>
+                FW Update
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li id="userBlockMenu" style="display: none;">
+          <a class="c-sidebar-nav-link" href="#" onclick="common.sessionLogout();">
+            <div class="c-sidebar-nav-icon icon-center">
+              <span class="bg-img bg-img-logout"></span>
+            </div>
+            Logout
+          </a>
+        </li>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
+        <div class="ps__rail-y" style="top: 0px; height: 519px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 340px;"></div></div>
+      </ul>
+      <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
+    </div>
+    <div class="c-wrapper c-fixed-components">
+      <!--Header-->
+      <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+        <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">
+          <div class="menu-icon">
+            <span></span>
+          </div>
+        </button>
+        <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true">
+          <div class="menu-icon">
+            <span></span>
+          </div>
+        </button>
+        <a class="c-header-brand c-header-brand-center d-logo-none" href="index.html">
+          <div alt="Enel Logo">
+            <span class="bg-img bg-img-logo-header-full"></span>
+          </div>
+        </a>
+        <ul class="c-header-nav ml-auto mr-4">
+          <li class="c-header-nav-item dropdown" id="userBlockHeader" style="display: none;">
+            <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <div class="c-avatar">
+                <span class="bg-img bg-img-user"></span>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right pt-0">
+              <div class="dropdown-header bg-light py-2">
+                <strong>Account</strong>
+              </div>
+              <div class="dropdown-item-info">
+                <span><label class="label1">User name:</label></span>
+                <span id="userName">USER1</span>
+              </div>
+              <div class="dropdown-item-info">
+                <span><label class="label1">User role:&nbsp;&nbsp;&nbsp;</label></span>
+                <span id="userRole">Superadmin</span>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" onclick="common.sessionLogout();">
+                <div class="c-icon mr-2 icon-center">
+                  <span class="bg-img bg-img-logout2"></span>
+                </div>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+        <div class="c-subheader px-3">
+          <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item active">Services</li>
+            <li class="breadcrumb-item active">NTP</li>
+          </ol>
+        </div>
+      </header>
+      <div class="c-body">
+        <!--Main content-->
+        <main class="c-main">
+          <div class="container-fluid">
+            <div class="fade-in">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-status bg-status-ok" id="statusDiv" style="display: none;">
+                    <span class="status-img bg-img bg-img-status-ok" id="imgStatusOk" style="display: none;"></span>
+                    <span class="status-img bg-img bg-img-status-bad" id="imgStatusErr" style="display: none;"></span>
+                    <span class="status-img bg-img bg-img-status-warn" id="imgStatusWarn" style="display: none;"></span>
+                    <strong id="statusTextDiv" class="status-text"></strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="fade-in">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <strong>NTP Setup</strong>
+                    </div>
+                    <div class="card-body">
+                      <div class="form-horizontal">
+                        <div class="form-group row">
+                          <label class="col-md-4 col-form-label" for="ntpMode">Time configuration:</label>
+                          <div class="col-md-6">
+                            <select class="form-control" id="ntpMode" onchange="servNtp.timeConfigChanged();">
+                              <option value="0">NTP Server</option>
+                              <option value="1">Manual</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div id="ntpAutoRegionId">
+                          <div class="form-group row">
+                            <label class="col-md-4 col-form-label" for="ntpServerAddr">Server IP/URL adress:</label>
+                            <div class="col-md-6">
+                              <input class="form-control" type="text" id="ntpServerAddr" value="" onKeyPress="if(((event.keyCode>=33)&&(event.keyCode<=126))) return true; else return false;" />
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-md-4 col-form-label" for="ntpTimeZone">Time zone:</label>
+                            <div class="col-md-6">
+                              <input
+                                class="form-control"
+                                type="text"
+                                id="ntpTimeZone"
+                                value=""
+                                onKeyPress="if(((event.keyCode>=48)&&(event.keyCode<=57))||(event.keyCode==58)||(event.keyCode==43)||(event.keyCode==45)) return true; else return false;"
+                              />
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-md-4 col-form-label" for="ntpSynchInterval">Synch interval (min):</label>
+                            <div class="col-md-6">
+                              <input class="form-control" type="text" id="ntpSynchInterval" value="" onKeyPress="if(((event.keyCode>=48)&&(event.keyCode<=57))||(event.keyCode==46)) return true; else return false;" />
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-md-4 col-form-label" for="ntpRetryInterval">Retry interval (min):</label>
+                            <div class="col-md-6">
+                              <input class="form-control" type="text" id="ntpRetryInterval" value="" onKeyPress="if(((event.keyCode>=48)&&(event.keyCode<=57))||(event.keyCode==46)) return true; else return false;" />
+                            </div>
+                          </div>
+                        </div>
+                        <div id="ntpManRegionId">
+                          <div class="form-group row">
+                            <label class="col-md-4 col-form-label" for="ntpManTime">Set date/time:</label>
+                            <div class="col-md-6">
+                              <input class="form-control" type="datetime-local" id="ntpManTime" onkeydown="return false" />
+                            </div>
+                          </div>
+                        </div>
+                        <!--
+                        <div class="form-group row">
+                          <label for="ntpRtcAddr" class="col-md-4 col-form-label">RTC I2C address (HEX):</label>
+                          <div class="col-md-6">
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="ntpRtcAddr"
+                              onKeyPress="if(((event.keyCode>=48)&&(event.keyCode<=57)) || ((event.keyCode>=65)&&(event.keyCode<=70)) || ((event.keyCode>=97)&&(event.keyCode<=102))) return true; else return false;"
+                            />
+                          </div>
+                        </div>
+                        -->
+                        <div class="form-group row">
+                          <label class="col-md-4 col-form-label" for="ntpUptime">Uptime:</label>
+                          <div class="col-md-6 d-flex align-items-center" id="ntpUptime">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-4 col-form-label" for="ntpCurrTime">Current time:</label>
+                          <div class="col-md-6 d-flex align-items-center" id="ntpCurrTime">
+                          </div>
+                        </div>
+                        <div id="ntpStatusRegionId">
+                          <div class="form-group row">
+                            <label class="col-md-4 col-form-label" for="ntpLastUpdated">Last updated:</label>
+                            <div class="col-md-6 d-flex align-items-center" id="ntpLastUpdated">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-md-4 col-form-label" for="ntpStatus">Status:</label>
+                            <div class="col-md-6 d-flex align-items-center" id="ntpStatus">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-6">
+                          <button class="btn btn-primary btn-standart" onclick="servNtp.save();">
+                            Save
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!--Footer-->
+        <footer class="c-footer">V<span id="fwVer"></span></footer>
+      </div>
+    </div>
+    <!--build:js commonMin.js  -->
+    <script src="src\js\responsive.js"></script>
+    <script src="src\js\common.js"></script>
+    <script src="src\js\commands.js"></script>
+    <!-- endbuild -->
+    <!--build:js servNtpMin.js  -->
+    <script src="src\js\servNtp.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="icon.png" />
+    <!--build:css styleMin.css  -->
+    <link href="src\css\style.css" rel="stylesheet" />
+    <!-- endbuild -->
+  </head>
+  <body class="c-app flex-row align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body1">
+                <h1>Login</h1>
+                <p class="text-muted" id="login-info-div" style="visibility: hidden;">Use default credentials: admin / admin</p>
+                <div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <div class="c-icon icon-center">
+                          <span class="bg-img bg-img-login-user"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <input class="form-control" type="text" name="username" id="userName" onkeydown="login.clrErrorStatus();" onKeyPress="login.clrErrorStatus();if(((event.keyCode>=32)&&(event.keyCode<=126))) return true; else return false;" />
+                  </div>
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <div class="c-icon icon-center">
+                          <span class="bg-img bg-img-login-pass"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <input class="form-control" type="password" name="password" id="password" onkeydown="login.clrErrorStatus();" onKeyPress="login.clrErrorStatus(); if (event.keyCode == 13) login.sessionLogin();if(((event.keyCode>=32)&&(event.keyCode<=126))) return true; else return false;" />
+                  </div>
+                  <p class="text-danger" id="login-error-div" style="visibility: hidden;">* Invalid username or password</p>
+                  <div class="row">
+                    <div class="col-6">
+                      <button class="btn btn-primary btn-standart" name="login" onclick="login.sessionLogin();">Login</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card text-white bg-primary d-md-down-none" style="width: 44%;">
+              <div class="card-body text-center">
+                <div>  
+                  <p>&nbsp;</p>
+                  <div class="icon-center">
+                    <span class="bg-img bg-img-login-logo"></span>
+                  </div>
+                  <p>
+                    <a href="https://www.emtel.ie/" target="blank" class="btn btn-lg btn-outline-light mt-3" href="#">See products</a>
+                  </p>
+                  <h1></h1>
+                  <p>
+                    © 2022 EMTel
+                  </p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--build:js commonMin.js  -->
+    <script src="src\js\responsive.js"></script>
+    <script src="src\js\common.js"></script>
+    <script src="src\js\commands.js"></script>
+    <!-- endbuild -->
+    <!--build:js loginMin.js  -->
+    <script src="src\js\login.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
