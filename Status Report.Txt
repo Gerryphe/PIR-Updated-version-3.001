@@ -1,0 +1,10 @@
+Output: BOM
+Type  : BOM
+From  : Variant [Prototype] of Project [1-10V_PIR_V1.0.PrjPcb]
+   Generated File[BOM-1-10V_PIR_V1.0(Prototype).xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 10:27:15 AM On 10/28/2023

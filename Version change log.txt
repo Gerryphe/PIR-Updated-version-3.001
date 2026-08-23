@@ -1,0 +1,35 @@
+Version 1.1.1.2
+** updates
+* LED driver is implemented 
+  - when enable in the web portal it goes to a value determine with difference between MIN and MAX on web portal and value of dip-switch 1
+* delay is implemented 
+  - the delay time determine with the value set on the web portal and dip-switch position
+** bug fixed
+* web portal logout bug is fixed
+
+Version 1.1.1.3
+* Logger added
+
+
+
+Version 1.1.1.4
+* config can be changed using Rest API using host IP
+* ST_LED blinking during dimming and solid during activation
+* Display to Dimming
+
+Version 1.1.1.5
+
+* default values added 
+  set to 25% and 100% for dimming
+
+* 100 second for delay
+* sensitivity 100%
+* change value for ntp time out to 5 second (to set the time correctly)
+* dimming maximum changes will affect immediately.
+
+Version 1.1.1.6
+* fading added for every percent between dimming and maximum take 20ms
+
+Version 1.1.1.7
+* timeout bug fixed ( the maximum was limited to 255s now it can be more 8bit now it 16 bit)
+

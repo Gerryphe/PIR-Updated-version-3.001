@@ -1,0 +1,30 @@
+{
+  "name": "enel-co2-sensor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "6.0.0",
+    "fancy-log": "2.0.0",
+    "gulp": "4.0.2",
+    "gulp-file": "0.4.0",
+    "gulp-gzip": "1.4.2",
+    "gulp-htmlmin": "5.0.1",
+    "gulp-if": "3.0.0",
+    "gulp-clean-css": "4.3.0",
+    "gulp-rename": "2.0.0",
+    "gulp-tap": "2.0.0",
+    "gulp-uglify": "3.0.2",
+    "gulp-useref": "5.0.0",
+    "gulp-x-includer": "0.1.2",
+    "path": "0.12.7",
+    "gulp-series": "1.0.2",
+    "gulp-filelist": "2.0.5",
+    "gulp-concat": "2.6.1"
+  }
+}
